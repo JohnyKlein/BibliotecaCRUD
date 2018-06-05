@@ -1,9 +1,13 @@
 package br.org.catolicasc.sharelib.bean;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Estante implements Bean {
@@ -12,6 +16,8 @@ public class Estante implements Bean {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
+	@OneToMany(mappedBy="estante", cascade=CascadeType.ALL)
+	private List<Exemplar> exemplares;
 
 	public Estante() {}
 

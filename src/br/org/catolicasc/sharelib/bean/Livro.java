@@ -1,11 +1,15 @@
 package br.org.catolicasc.sharelib.bean;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Livro implements Bean {
@@ -19,6 +23,8 @@ public class Livro implements Bean {
 	private String autor;
 	@Enumerated(EnumType.STRING)
 	private Genero genero;
+	@OneToMany(mappedBy="livro", cascade=CascadeType.ALL)
+	private List<Exemplar> exemplares;
 
 	public Livro() {}
 
