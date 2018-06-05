@@ -6,41 +6,38 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Customer implements Bean {
+public class Cliente implements Bean {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String name;
+	private String nome;
 	private String cpf;
-	private String phoneNumber;
+	private String numeroTelefone;
 
-	public Customer() {
-	}
+	public Cliente() {}
 
-	public Customer(Long id, String name, String cpf, String phoneNumber) {
+	public Cliente(Long id, String nome, String cpf, String numeroTelefone) {
 		setId(id);
-		setName(name);
+		setNome(nome);
 		setCpf(cpf);
-		setPhoneNumber(phoneNumber);
+		setNumeroTelefone(numeroTelefone);
 	}
 
-	@Override
 	public Long getId() {
 		return id;
 	}
 
-	@Override
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getCpf() {
@@ -51,12 +48,11 @@ public class Customer implements Bean {
 		this.cpf = cpf;
 	}
 
-	public String getPhoneNumber() {
-		return phoneNumber;
+	public String getNumeroTelefone() {
+		return numeroTelefone;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setNumeroTelefone(String numeroTelefone) {
+		this.numeroTelefone = numeroTelefone;
 	}
-
 }
