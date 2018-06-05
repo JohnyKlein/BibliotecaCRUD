@@ -9,26 +9,27 @@ import javax.persistence.Id;
 public class Customer implements Bean {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
 	private String cpf;
 	private String phoneNumber;
-	
-	public Customer() {}
-	
+
+	public Customer() {
+	}
+
 	public Customer(Long id, String name, String cpf, String phoneNumber) {
 		setId(id);
 		setName(name);
 		setCpf(cpf);
 		setPhoneNumber(phoneNumber);
 	}
-	
+
 	@Override
 	public Long getId() {
 		return id;
 	}
-	
+
 	@Override
 	public void setId(Long id) {
 		this.id = id;
@@ -57,5 +58,5 @@ public class Customer implements Bean {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	
+
 }

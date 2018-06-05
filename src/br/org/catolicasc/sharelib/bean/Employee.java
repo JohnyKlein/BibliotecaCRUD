@@ -6,18 +6,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Employee implements Bean{
+public class Employee implements Bean {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
 	private String cpf;
 	private String phoneNumber;
 	private String function;
-	
-	public Employee(){}
-	
+
+	public Employee() {
+	}
+
 	public Employee(Long id, String name, String cpf, String phoneNumber, String function) {
 		setId(id);
 		setName(name);
@@ -25,7 +26,7 @@ public class Employee implements Bean{
 		setPhoneNumber(phoneNumber);
 		setFunction(function);
 	}
-	
+
 	@Override
 	public Long getId() {
 		return id;
@@ -35,7 +36,7 @@ public class Employee implements Bean{
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
