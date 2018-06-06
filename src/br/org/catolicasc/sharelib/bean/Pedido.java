@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Pedido implements Bean{
@@ -16,10 +17,13 @@ public class Pedido implements Bean{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+	@NotNull
 	@OneToOne
 	private Cliente cliente;
+	@NotNull
 	@OneToOne
 	private Funcionario funcionario;
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataPedido;
 	

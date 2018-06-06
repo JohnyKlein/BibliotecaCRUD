@@ -21,10 +21,14 @@ public class Livro implements Bean {
 	private Long id;
 	@NotNull
 	private String nome;
+	@NotNull
 	private String editora;
+	@NotNull
 	private Long isbnId;
+	@NotNull
 	private String autor;
 	@Enumerated(EnumType.STRING)
+	@NotNull
 	private Genero genero;
 	@OneToMany(mappedBy="livro", cascade=CascadeType.ALL)
 	private List<Exemplar> exemplares;
