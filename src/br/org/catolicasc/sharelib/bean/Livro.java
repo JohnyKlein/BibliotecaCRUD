@@ -27,8 +27,8 @@ public class Livro implements Bean {
 	private Long isbnId;
 	@NotNull
 	private String autor;
-	@Enumerated(EnumType.STRING)
 	@NotNull
+	@Enumerated(EnumType.STRING)
 	private Genero genero;
 	@OneToMany(mappedBy="livro", cascade=CascadeType.ALL)
 	private List<Exemplar> exemplares;
