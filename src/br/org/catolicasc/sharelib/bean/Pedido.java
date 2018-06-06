@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Pedido implements Bean{
@@ -18,6 +20,7 @@ public class Pedido implements Bean{
 	private Cliente cliente;
 	@OneToOne
 	private Funcionario funcionario;
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataPedido;
 	
 	public Pedido() {}

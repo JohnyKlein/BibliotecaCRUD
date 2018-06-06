@@ -9,12 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import javax.validation.constraints.NotNull;
+
 @Entity
 public class Estante implements Bean {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@NotNull
 	private String nome;
 	@OneToMany(mappedBy="estante", cascade=CascadeType.ALL)
 	private List<Exemplar> exemplares;

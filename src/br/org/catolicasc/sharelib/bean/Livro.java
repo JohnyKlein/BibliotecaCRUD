@@ -11,12 +11,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import javax.validation.constraints.NotNull;
+
 @Entity
 public class Livro implements Bean {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@NotNull
 	private String nome;
 	private String editora;
 	private Long isbnId;
