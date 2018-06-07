@@ -12,7 +12,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Pedido implements Bean{
+public class Emprestimo implements Bean{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -27,9 +27,9 @@ public class Pedido implements Bean{
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataPedido;
 	
-	public Pedido() {}
+	public Emprestimo() {}
 	
-	public Pedido(Long id, Cliente cliente, Funcionario funcionario, Date dataPedido) {
+	public Emprestimo(Long id, Cliente cliente, Funcionario funcionario, Date dataPedido) {
 		setId(id);
 		setCliente(cliente);
 		setFuncionario(funcionario);
